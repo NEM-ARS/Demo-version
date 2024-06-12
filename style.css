@@ -5,6 +5,7 @@
     font-style: normal;
     font-display: swap;
 }
+
 @font-face {
     font-family: "Manrope";
     src: url('./fonts/Manrope-Regular.ttf') format('ttf');
@@ -12,14 +13,24 @@
     font-style: normal;
     font-display: swap;
 }
- 
-*{
-    margin:0;
+
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.container{
+body {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+.container {
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -28,36 +39,32 @@
     background-color: #EBF0FA;
 }
 
-.section__l{
+.section__l {
     padding: 0 72px;
     display: flex;
     align-items: center;
 }
 
-.section__wraper{
+.section__wraper {
     max-width: 510px;
 }
 
-.section__title{
+.section__title {
     margin-bottom: 18px;
-    font-family: "Manrope", sans-serif;
-    font-weight: 500;
     font-size: 30px;
     line-height: 48px;
     color: #1F4284;
 }
 
-.section__wraper p{
+.section__wraper p {
     margin-bottom: 36px;
-    font-family: "Manrope", sans-serif;
     font-weight: 400;
     font-size: 17px;
     line-height: 27.2px;
     color: #727272;
 }
 
-.secton__button{
-    cursor: pointer;
+.secton__button {
     position: relative;
     width: 341px;
     height: 62px;
@@ -66,15 +73,13 @@
     padding: 0 50px 0 24px;
     background-color: #1F4284;
     text-align: start;
-    font-family: "Manrope", sans-serif;
-    font-weight: 500;
     font-size: 18px;
     line-height: 28.8px;
     color: #fff;
     transition: transform .1s linear;
 }
 
-.secton__button::before{
+.secton__button::before {
     content: url(./icons/arrow.svg);
     position: absolute;
     right: 12px;
@@ -89,12 +94,150 @@
     transform: rotateZ(-45deg);
 }
 
-.secton__button:hover{
+.secton__button:hover {
     transform: scale(1.05);
 }
 
-.section__r img{
+.section__r img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    overflow: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .1s ease-out;
+}
+
+.show{
+    visibility: visible;
+    opacity: 1;
+}
+
+.form {
+    width: 500px;
+    padding: 24px;
+    background-color: #F0F4FC;
+}
+
+.form__close {
+    width: 100%;
+    height: 52px;
+    position: relative;
+}
+
+.form__close__btn {
+    width: 52px;
+    position: relative;
+    float: right;
+    height: 100%;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+}
+
+.form__close__btn:hover{
+    transform: scale(1.1);
+}
+
+.form__close__btn::after,
+.form__close__btn::before {
+    content: "";
+    width: 2px;
+    height: 15px;
+    border-radius: 2px;
+    background-color: #000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotateZ(45deg);
+}
+
+.form__close__btn::before {
+    transform: translate(-50%, -50%) rotateZ(-45deg);
+}
+
+.form__title {
+    font-size: 24px;
+    line-height: 32.8px;
+    margin-bottom: 18px;
+    color: #323232;
+}
+
+.form>input::placeholder {
+    font-size: 18px;
+    line-height: 24.6px;
+    color: #1F4284;
+}
+
+.form>input {
+    width: 100%;
+    height: 73px;
+    margin-bottom: 4px;
+    padding: 24px;
+    font-size: 24px;
+    line-height: 24.6px;
+    color: #1F4284;
+    border: none;
+    border-radius: 10px;
+    background-color: #D7E2F6;
+}
+
+.form>input:focus {
+    outline: none;
+    border-style: none;
+    border: 2px solid #1F4284;
+}
+
+.form__checkbox {
+    margin: 20px 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24.6px;
+    color: #323232;
+}
+
+.form__checkbox>input {
+    transform: scale(1.4);
+    margin-right: 14px;
+}
+
+.form>a {
+    display: block;
+    margin-bottom: 32px;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 27.3px;
+    color: #244C98;
+}
+
+.form__btn {
+    width: 100%;
+    height: 65px;
+    font-size: 18px;
+    line-height: 28.8px;
+    color: #fff;
+    border-radius: 4px;
+    margin-top: 4px;
+    background-color: #244C98;
+    border: 2px solid #244C98;
+    opacity: 1;
+}
+
+.form__btn2 {
+    color: #244C98;
+    background-color: inherit;
+}
+
+.form__btn:hover {
+    opacity: .7;
 }
