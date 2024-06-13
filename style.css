@@ -272,6 +272,10 @@ button {
 }
 
 @media (max-width: 1100px) {
+    body{
+        padding: 24px;
+    }
+    
     .container {
         grid-template-columns: none;
     }
