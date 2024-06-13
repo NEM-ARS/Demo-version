@@ -21,8 +21,12 @@
 }
 
 body {
+    overflow: auto;
+    height: 100vh;
+    min-height: 500px;
     font-family: "Manrope", sans-serif;
     font-weight: 500;
+    padding: 36px 40px;
 }
 
 button {
@@ -31,18 +35,22 @@ button {
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: grid;
     grid-template-columns: 50% 50%;
-    overflow: hidden;
-    background-color: #EBF0FA;
+    /* overflow: hidden; */
+    /* background-color: #EBF0FA; */
 }
 
 .section__l {
-    padding: 0 72px;
+    padding: 10px 72px;
     display: flex;
     align-items: center;
+    background-color: #EBF0FA;
+    border-radius: 10px 0 0 10px;
+
+
 }
 
 .section__wraper {
@@ -102,13 +110,15 @@ button {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 0 10px 10px 0;
 }
 
 .modal {
     position: fixed;
+    padding: 10px;
     inset: 0;
     z-index: 9999;
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(5px);
@@ -118,13 +128,13 @@ button {
     transition: all .1s ease-out;
 }
 
-.show{
+.show {
     visibility: visible;
     opacity: 1;
 }
 
 .form {
-    width: 500px;
+    max-width: 500px;
     padding: 24px;
     background-color: #F0F4FC;
 }
@@ -145,7 +155,7 @@ button {
     border-radius: 10px;
 }
 
-.form__close__btn:hover{
+.form__close__btn:hover {
     transform: scale(1.1);
 }
 
@@ -212,7 +222,7 @@ button {
     margin-right: 14px;
 }
 
-.form__checkbox>label{
+.form__checkbox>label {
     cursor: pointer;
     display: block;
     width: 100%;
@@ -231,7 +241,7 @@ button {
     border-bottom: 2px solid #F0F4FC;
 }
 
-.restore:hover{
+.restore:hover {
     border-bottom: 2px solid #244C98;
 }
 
@@ -259,4 +269,48 @@ button {
 
 .form__btn:hover {
     opacity: .7;
+}
+
+@media (max-width: 1100px) {
+    .container {
+        grid-template-columns: none;
+    }
+
+    .section__l {
+        border-radius: 10px 10px 0 0;
+        padding: 24px;
+    }
+
+    .section__r {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .section__r img{
+        border-radius: 0 0 10px 10px;
+    }
+
+    .section__wraper {
+        max-width: 100%;
+    }
+
+    .section__title {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .section__wraper p {
+        margin-bottom: 24px;
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .secton__button {
+        width: 261px;
+        height: 62px;
+        padding: 0 50px 0 24px;
+        background-color: #1F4284;
+        font-size: 15px;
+        line-height: 24px;
+    }
 }
