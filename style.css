@@ -199,6 +199,7 @@ button {
 }
 
 .form__checkbox {
+    position: relative;
     margin: 20px 0;
     font-weight: 400;
     font-size: 18px;
@@ -211,13 +212,27 @@ button {
     margin-right: 14px;
 }
 
-.form>a {
+.form__checkbox>label{
+    cursor: pointer;
     display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.restore {
+    display: inline-block;
     margin-bottom: 32px;
     text-decoration: none;
     font-size: 20px;
     line-height: 27.3px;
     color: #244C98;
+    border-bottom: 2px solid #F0F4FC;
+}
+
+.restore:hover{
+    border-bottom: 2px solid #244C98;
 }
 
 .form__btn {
@@ -236,6 +251,10 @@ button {
 .form__btn2 {
     color: #244C98;
     background-color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .form__btn:hover {

@@ -11,19 +11,21 @@
 
 <body>
     <div class="modal">
-        <form action="#" class="form">
+        <form action="#" class="form" id="form">
             <div class="form__close">
-                <button class="form__close__btn"></button>
+                <div class="form__close__btn"></div>
             </div>
             <div class="form__title">Войти в систему</div>
-            <input type="text" placeholder="Email/Телефон">
-            <input type="password" placeholder="Пароль">
+            <input type="text" name="Email" placeholder="Email/Телефон" required>
+            <input type="password" name="password" placeholder="Пароль" required>
             <div class="form__checkbox">
-                <input type="checkbox"> Запомнить пароль
+                <input type="checkbox" name="checked" id="checked"> 
+                <label for="checked"></label> 
+                Запомнить пароль
             </div>
-            <a href="#">Восстановить</a>
-            <button class="form__btn">Войти</button>
-            <button class="form__btn form__btn2">Зарегестрироваться</button>
+            <a href="#" class="restore">Восстановить</a>
+            <button class="form__btn" type="submit">Войти</button>
+            <a href="#" class="form__btn form__btn2">Зарегестрироваться</a>
         </form>
     </div>
     <div class="container">
